@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ezyCRM</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+     <!-- Chart Js  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="icon" href="assets/images/ezy-favicon.png">
+</head>
+<body data-theme="light" id="body">
+
+   <div class="ezy-container">
+    <div class="ezy-sidenav-bar">
+        <a href="#"  class="ezy-logo"><img src="assets/images/ezy-logo.png"></a>
+        <ul class="ezy-nav-bar">
+            <li class="ezy-nav-list">
+                <a href="#" class="flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-house"></i>
+                        <span class="ezy-nav-list-name">Dashboard</span>
+                      </div>
+                      
+                </a>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class="flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-people"></i>
+                        <span>Customers</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class="flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-graph-up"></i>
+                        <span>Analaytics</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class=" ezy-nav-link flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-person"></i>
+                        <span>Account</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class=" ezy-nav-link flex justify-content-between align-items-center" onclick="Navdropdown(event,'product')">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-briefcase"></i>
+                        <span>Product</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+                <ul class="ezy-child-nav-bar" id="product">
+                    <li class="ezy-child-nav-list">
+                        <a href="#" >
+                            <input type="checkbox" id="createinvoices" >
+                            <label for="createinvoices">Product 1</label>    
+                        </a>
+                    </li>
+                    <li class="ezy-child-nav-list">
+                        <a href="#" class="">
+                            <input type="checkbox" id="counselors"  checked>
+                            <label for="counselors">Product 2</label>       
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class="ezy-nav-link flex justify-content-between align-items-center" onclick="Navdropdown(event,'listapp')">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-list-task"></i>
+                        <span>List of App Int</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+                <ul class="ezy-child-nav-bar" id="listapp">
+                    <li class="ezy-child-nav-list">
+                        <a href="#" >
+                            <input type="checkbox" id="createinvoices" >
+                            <label for="createinvoices">List item 1</label>    
+                        </a>
+                    </li>
+                    <li class="ezy-child-nav-list">
+                        <a href="#" class="">
+                            <input type="checkbox" id="counselors"  checked>
+                            <label for="counselors">list item 2</label>       
+                        </a>
+                    </li>
+                    <li class="ezy-child-nav-list">
+                        <a href="#" class="">
+                            <input type="checkbox" id="counselors"  checked>
+                            <label for="counselors">list item 3</label>       
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ezy-nav-list ">
+                <a href="#" class=" ezy-nav-link active flex justify-content-between align-items-center"  data-id="invoice" onclick="Navdropdown(event,'invoice')">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-receipt"></i>
+                        <span>Invoices</span>
+                      </div>
+                      <div class="ezy-nav-dropdown-arrow">
+                        <i class="bi bi-chevron-down " ></i>
+                      </div>
+                </a>
+                <ul class="ezy-child-nav-bar active" id="invoice">
+                    <li class="ezy-child-nav-list">
+                        <a href="#" >
+                            <input type="checkbox" id="createinvoices" >
+                            <label for="createinvoices">Create Invoices</label>    
+                        </a>
+                    </li>
+                    <li class="ezy-child-nav-list">
+                        <a href="#" class="active">
+                            <input type="checkbox" id="counselors"  checked>
+                            <label for="counselors">Counselors</label>       
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class="flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-building-add"></i>
+                        <span>Integrations</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+            </li>
+        </ul>
+
+
+        <ul class="ezy-nav-bar">
+            <li class="ezy-nav-list">
+                <a href="#" class="flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-info-circle"></i>
+                        <span>Support</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+            </li>
+            <li class="ezy-nav-list">
+                <a href="#" class="flex justify-content-between align-items-center">
+                      <div class="flex align-items-center ezy-nav-list-left">
+                        <i class="bi bi-gear"></i>
+                        <span>Setting</span>
+                      </div>
+                      <div>
+                        <i class="bi bi-chevron-down"></i>
+                      </div>
+                </a>
+            </li>
+        </ul>
+
+          <div class="theme-btn-grp">
+            <div class="theme-buttons-tab">
+                <p class="theme-btn active"  onclick="changetheme(event,'light')"><i class="bi bi-brightness-high"></i></p>
+                <p onclick="changetheme(event,'dark')" class="theme-btn"><i class="bi bi-moon"></i></p>
+            </div>
+          </div>
+    </div>
+    <div class="ezy-right-container">
+        <div class="ezy-header flex justify-content-between align-items-center">
+            <div>
+                <span class="ezy-header-search-field">
+                    <i class="bi bi-search"></i>
+                <input type="text" placeholder="search">
+                
+                </span>
+            </div>
+            <div class="flex align-items-center">
+                <div class="ezy-header-icon relative">
+                    <div class="ezy-header-icon-box">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+                </div>
+                <div class="ezy-header-icon relative">
+                    <div class="ezy-header-icon-box ezy-notification-icon relative">
+                        <i class="bi bi-bell"></i>
+                        <span class="ezy-notification-dots"></span>
+                    </div>
+                </div>
+                
+                <div class="ezy-header-user-info">
+                    <div class="ezy-user-profile flex align-items-center">
+                        
+                            <p class="ezy-header-user-name">Hi, johns</p>
+                        
+                        <div class="ezy-user-profile-img">
+                            <img src="assets/images/user1.jpg">
+                        </div>
+                        <p class="ezy-user-profile-dropdown-arrow"> <i class="bi bi-chevron-down"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ezy-main-container">
+            <div class="ezy-main-content-header-field flex align-items-center justify-content-between">
+                <h1 class="ezy-page-content-headeing">Counselors</h1>
+                <button class="ezy-btn ezy-primary-btn ezy-icon-left-btn"><i class="bi bi-plus-lg"></i>Add New</button>
+            </div>
+            <div class="ezy-counselor-content-group flex">
+                <div class="ezy-counselor-left-container">
+                    <div class="ezy-counselor-work-progress-group flex justify-content-between ">
+                    <div class="ezy-counselor-work-progress-box">
+                          <div class="ezy-work-progress-header flex align-items-center justify-content-between">
+                            <p class="ezy-work-progress-title">Hours of Consulations</p>
+                            <i class="bi bi-three-dots-vertical"></i>
+                          </div>
+                          <h2 class="ezy-progress-value">10,912</h2>
+                          <p class="ezy-progress-value-info  low-value"><i class="bi bi-arrow-down-short"></i><span>6.5% vs Last 30 days</span></p>
+                    </div>
+                    <div class="ezy-counselor-work-progress-box">
+                        <div class="ezy-work-progress-header flex align-items-center justify-content-between">
+                          <p class="ezy-work-progress-title">Hours of Consulations</p>
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </div>
+                        <h2 class="ezy-progress-value">10,912</h2>
+                        <p class="ezy-progress-value-info  low-value"><i class="bi bi-arrow-down-short"></i><span>6.5% vs Last 30 days</span></p>
+                  </div>
+                  <div class="ezy-counselor-work-progress-box">
+                    <div class="ezy-work-progress-header flex align-items-center justify-content-between">
+                      <p class="ezy-work-progress-title">Hours of Consulations</p>
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </div>
+                    <h2 class="ezy-progress-value">10,912</h2>
+                    <p class="ezy-progress-value-info  high-value"><i class="bi bi-arrow-down-short"></i><span>6.5% vs Last 30 days</span></p>
+                  </div>       
+                </div>
+                <div class="ezy-chart-content-container">
+                 <div class="ezy-chart-container">
+                    <div class="ezy-chart-container-header flex align-items-center justify-content-between">
+                        <h3>Hours of consultation</h3>
+                        <div class="ezy-charts-label-info flex align-items-center">
+                              <div class="ezy-chart-label-values chart-info-value1 flex align-items-center">
+                                <span class="ezy-chart-label-round">
+
+                                </span>
+                                <span class="ezy-chart-label-name">Educational</span>
+                               </div>
+                              <div class="ezy-chart-label-values chart-info-value2 flex align-items-center">
+                                <span class="ezy-chart-label-round">
+
+                                </span>
+                                <span class="ezy-chart-label-name">Family</span>
+                              </div>
+                        </div>
+                        <div>
+                            <div class="flex align-items-center chart-period-values">
+                                <p>This Week</p>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="myChart"  ></canvas>
+                 </div>
+                </div>
+                <div class="ezy-table-content-container">
+                    <div class="ezy-table-container">
+                        <div class="ezy-table-header flex align-items-center justify-content-between">
+                            <h3>Counselor history</h3>
+                            <a href="#" class="ezy-viewall-text">View all</a>
+                        </div>
+                        <table class="ezy-conselor-table-data">
+                            <thead>
+                                <th>Name</th>
+                                 <th>Specialization</th>
+                                 <th>Hours of Consultation</th>
+                                 <th>Rate</th>
+                                 <th></th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="ezy-counselor-table-profile-info">
+                                            <div class="ezy-counselor-profile-img">
+                                             <img src="assets/images/user2.jpg">
+                                            </div>
+                                            <p>Jeams Bond</p>
+                                        </div>
+                                    </td>
+                                    <td>Marriage</td>
+                                    <td>112</td>
+                                    <td>$20</td>
+                                    <td>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ezy-counselor-table-profile-info">
+                                            <div class="ezy-counselor-profile-img">
+                                                    <img src="assets/images/user3.jpg">
+                                            </div>
+                                            <p>Harris Rybert</p>
+                                        </div>
+                                    </td>
+                                    <td>Addition</td>
+                                    <td>403</td>
+                                    <td>$35</td>
+                                    <td>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ezy-counselor-table-profile-info">
+                                            <div class="ezy-counselor-profile-img">
+                                               <img src="assets/images/user4.jpg">
+                                            </div>
+                                            <p>Raffin carlino</p>
+                                        </div>
+                                    </td>
+                                    <td>Infomenia</td>
+                                    <td>352</td>
+                                    <td>$60</td>
+                                    <td>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ezy-counselor-table-profile-info">
+                                            <div class="ezy-counselor-profile-img">
+                                                <img src="assets/images/user5.jpg">
+                                            </div>
+                                            <p>Kelvin Jeams</p>
+                                        </div>
+                                    </td>
+                                    <td>Utoponia</td>
+                                    <td>289</td>
+                                    <td>$43</td>
+                                    <td>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+                <div class="ezy-counselor-right-container">
+                    <div class="ezy-counselor-latest-profile">
+                        <div class="flex align-items-center">
+                            <div class="ezy-counselor-latest-profile-img">
+                                <img src="assets/images/user4.jpg">
+                            </div>
+                            <div class="ezy-lastest-counselor-info">
+                                <p class="ezy-counselor-name">Liana Mikash</p>
+                                <p class="ezy-counselor-type">Marriage counselor</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-content-between ezy-latest-counselor-hours">
+                            <h3>347 hr</h3>
+                            <div>
+                                <div class="progress relative">
+                                <svg class="progress-bar progress-value-1" width="60" height="60">
+                                    <circle class="progress-circle" cx="30 " cy="30" r="26"></circle>
+                                    <circle class="progress-circle" cx="30 " cy="30" r="26"></circle>
+                                </svg>
+                                <div class="progress-value">
+                                    95%
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ezy-counselor-latest-profile">
+                        <div class="flex align-items-center">
+                            <div class="ezy-counselor-latest-profile-img">
+                                <img src="assets/images/user6.jpg">
+                            </div>
+                            <div class="ezy-lastest-counselor-info">
+                                <p class="ezy-counselor-name">Liana Mikash</p>
+                                <p class="ezy-counselor-type">Marriage counselor</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-content-between ezy-latest-counselor-hours">
+                            <h3>347 hr</h3>
+                            <div>
+                                <div class="progress relative">
+                                <svg class="progress-bar progress-value-2" width="60" height="60">
+                                    <circle class="progress-circle" cx="30 " cy="30" r="26"></circle>
+                                    <circle class="progress-circle" cx="30 " cy="30" r="26"></circle>
+                                </svg>
+                                <div class="progress-value">
+                                    95%
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ezy-counselor-latest-profile">
+                        <div class="flex align-items-center">
+                            <div class="ezy-counselor-latest-profile-img">
+                                <img src="assets/images/user2.jpg">
+                            </div>
+                            <div class="ezy-lastest-counselor-info">
+                                <p class="ezy-counselor-name">Liana Mikash</p>
+                                <p class="ezy-counselor-type">Marriage counselor</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-content-between ezy-latest-counselor-hours">
+                            <h3>347 hr</h3>
+                            <div>
+                                <div class="progress relative">
+                                <svg class="progress-bar progress-value-3" width="60" height="60">
+                                    <circle class="progress-circle" cx="30 " cy="30" r="26"></circle>
+                                    <circle class="progress-circle" cx="30 " cy="30" r="26"></circle>
+                                </svg>
+                                <div class="progress-value">
+                                    95%
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ezy-add-counselor-box">
+                            <p>New Counsellor</p>
+                            <p>67 adviser are ready to give advice. Add a new family consultant counseltants</p>
+                            <button class="ezy-btn ezy-icon-right-btn ezy-counselor-new-btn"><span>Add counselor</span><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
